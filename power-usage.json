@@ -17,7 +17,6 @@
   "editable": true,
   "gnetId": 12139,
   "graphTooltip": 0,
-  "id": 15,
   "links": [],
   "panels": [
     {
@@ -407,7 +406,7 @@
           "expr": "(topk(5,(hass_power_w > 5)))",
           "instant": true,
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{ friendly_name }}",
           "refId": "A"
         }
       ],
@@ -1275,7 +1274,7 @@
     "list": []
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {
@@ -1294,6 +1293,6 @@
   },
   "timezone": "",
   "title": "Power Usage",
-  "uid": "312",
-  "version": 9
+  "uid": "bJtTVdinz",
+  "version": 2
 }
