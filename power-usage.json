@@ -828,7 +828,8 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum_over_time(hass_power_w[1h]) /240",
+          "exemplar": true,
+          "expr": "sum_over_time(hass_power_w[1h]) * 24 / 1000 ",
           "hide": false,
           "interval": "",
           "legendFormat": "{{friendly_name}}",
@@ -1264,11 +1265,12 @@
       }
     }
   ],
-  "refresh": "",
+  "refresh": "30s",
   "schemaVersion": 30,
   "style": "dark",
   "tags": [
-    "Prometheus"
+    "Prometheus",
+    "Energy"
   ],
   "templating": {
     "list": []
@@ -1294,5 +1296,5 @@
   "timezone": "",
   "title": "Power Usage",
   "uid": "bJtTVdinz",
-  "version": 2
+  "version": 1
 }
