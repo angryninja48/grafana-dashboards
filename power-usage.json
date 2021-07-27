@@ -1212,7 +1212,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "hass_power_w{friendly_name=~\"office desk power\"}",
+          "expr": "hass_power_w{friendly_name=~\"office desk power|washing machine power|tv unit power\"}",
           "instant": false,
           "interval": "",
           "legendFormat": "{{friendly_name}}",
