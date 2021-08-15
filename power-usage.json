@@ -229,7 +229,7 @@
       "pluginVersion": "8.0.3",
       "targets": [
         {
-          "expr": "sum(hass_power_w)",
+          "expr": "sum(hass_sensor_power_w)",
           "instant": false,
           "interval": "",
           "legendFormat": "Max Power",
@@ -311,7 +311,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(hass_power_w)",
+          "expr": "sum(hass_sensor_power_w)",
           "instant": false,
           "interval": "",
           "legendFormat": "",
@@ -403,7 +403,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "(topk(5,(hass_power_w > 5)))",
+          "expr": "(topk(5,(hass_sensor_power_w > 5)))",
           "instant": true,
           "interval": "",
           "legendFormat": "{{ friendly_name }}",
@@ -480,7 +480,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "count(hass_power_w)",
+          "expr": "count(hass_sensor_power_w)",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -829,7 +829,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum_over_time(hass_power_w[1h]) * 24 / 1000 ",
+          "expr": "sum_over_time(hass_sensor_power_w[1h]) * 24 / 1000 ",
           "hide": false,
           "interval": "",
           "legendFormat": "{{friendly_name}}",
@@ -999,14 +999,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(hass_power_w)",
+          "expr": "sum(hass_sensor_power_w)",
           "instant": false,
           "interval": "",
           "legendFormat": "Total",
           "refId": "A"
         },
         {
-          "expr": "hass_power_w",
+          "expr": "hass_sensor_power_w",
           "interval": "",
           "legendFormat": "{{friendly_name}}",
           "refId": "B"
@@ -1104,13 +1104,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(hass_current_a)",
+          "expr": "sum(hass_sensor_current_a)",
           "interval": "",
           "legendFormat": "Total",
           "refId": "B"
         },
         {
-          "expr": "hass_current_a",
+          "expr": "hass_sensor_current_a",
           "interval": "",
           "legendFormat": "{{friendly_name}}",
           "refId": "A"
@@ -1213,7 +1213,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "hass_power_w{friendly_name=~\"office desk power|washing machine power|tv unit power\"}",
+          "expr": "hass_sensor_power_w{friendly_name=~\"office desk power|washing machine power|tv unit power\"}",
           "instant": false,
           "interval": "",
           "legendFormat": "{{friendly_name}}",
