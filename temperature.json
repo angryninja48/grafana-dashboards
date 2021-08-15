@@ -104,14 +104,14 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "hass_temperature_c{entity=~\"sensor.living_room_sensor_temperature\"}",
+          "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.living_room_sensor_temperature\"}",
           "interval": "",
           "legendFormat": "Living Room",
           "refId": "A"
         },
         {
           "exemplar": true,
-          "expr": "hass_temperature_c{entity=~\"sensor.bedroom_sensor_temperature\"}",
+          "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.bedroom_sensor_temperature\"}",
           "hide": false,
           "interval": "",
           "legendFormat": "Master Bedroom",
@@ -119,7 +119,7 @@
         },
         {
           "exemplar": true,
-          "expr": "hass_temperature_c{entity=~\"sensor.nursery_sensor_temperature\"}",
+          "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.nursery_sensor_temperature\"}",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -128,7 +128,7 @@
         },
         {
           "exemplar": true,
-          "expr": "hass_temperature_c{entity=~\"sensor.attic_sensor_temperature\"}",
+          "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.attic_sensor_temperature\"}",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -200,14 +200,14 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "hass_humidity_percent{entity=~\"sensor.living_room_sensor_humidity\"}",
+          "expr": "hass_sensor_humidity_percent{entity=~\"sensor.living_room_sensor_humidity\"}",
           "interval": "",
           "legendFormat": "Living Room",
           "refId": "A"
         },
         {
           "exemplar": true,
-          "expr": "hass_humidity_percent{entity=~\"sensor.bedroom_sensor_humidity\"}",
+          "expr": "hass_sensor_humidity_percent{entity=~\"sensor.bedroom_sensor_humidity\"}",
           "hide": false,
           "interval": "",
           "legendFormat": "Master Bedroom",
@@ -215,7 +215,7 @@
         },
         {
           "exemplar": true,
-          "expr": "hass_humidity_percent{entity=~\"sensor.nursery_sensor_humidity\"}",
+          "expr": "hass_sensor_humidity_percent{entity=~\"sensor.nursery_sensor_humidity\"}",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -224,7 +224,7 @@
         },
         {
           "exemplar": true,
-          "expr": "hass_humidity_percent{entity=~\"sensor.attic_sensor_humidity\"}",
+          "expr": "hass_sensor_humidity_percent{entity=~\"sensor.attic_sensor_humidity\"}",
           "format": "time_series",
           "hide": false,
           "interval": "",
