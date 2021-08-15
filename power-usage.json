@@ -9,6 +9,12 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       }
     ]
@@ -17,6 +23,7 @@
   "editable": true,
   "gnetId": 12139,
   "graphTooltip": 0,
+  "id": 5,
   "links": [],
   "panels": [
     {
@@ -74,7 +81,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.1.0",
       "targets": [
         {
           "exemplar": true,
@@ -144,7 +151,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.1.0",
       "targets": [
         {
           "exemplar": true,
@@ -226,7 +233,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.1.0",
       "targets": [
         {
           "expr": "sum(hass_sensor_power_w)",
@@ -239,94 +246,6 @@
       "timeFrom": "24h",
       "timeShift": null,
       "title": "Power Max last 24h",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "decimals": 0,
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "text": "N/A"
-                }
-              },
-              "type": "special"
-            }
-          ],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "#299c46",
-                "value": null
-              },
-              {
-                "color": "rgba(237, 129, 40, 0.89)",
-                "value": 500
-              },
-              {
-                "color": "#d44a3a",
-                "value": 1000
-              }
-            ]
-          },
-          "unit": "watt"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 3,
-        "x": 9,
-        "y": 0
-      },
-      "id": 32,
-      "interval": "15s",
-      "links": [],
-      "maxDataPoints": 100,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.0.3",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "sum(hass_sensor_power_w)",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        },
-        {
-          "expr": "",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "B"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Current Power",
       "type": "stat"
     },
     {
@@ -376,8 +295,8 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 12,
+        "w": 15,
+        "x": 9,
         "y": 0
       },
       "id": 20,
@@ -399,7 +318,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.1.0",
       "targets": [
         {
           "exemplar": true,
@@ -423,6 +342,7 @@
           "color": {
             "mode": "thresholds"
           },
+          "decimals": 0,
           "mappings": [
             {
               "options": {
@@ -438,37 +358,41 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "#299c46",
                 "value": null
               },
               {
-                "color": "red",
-                "value": 80
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 500
+              },
+              {
+                "color": "#d44a3a",
+                "value": 1000
               }
             ]
           },
-          "unit": "none"
+          "unit": "watt"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 3,
-        "w": 2,
+        "w": 3,
         "x": 6,
         "y": 3
       },
-      "id": 6,
-      "interval": null,
+      "id": 32,
+      "interval": "15s",
       "links": [],
       "maxDataPoints": 100,
       "options": {
-        "colorMode": "none",
+        "colorMode": "value",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "mean"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
@@ -476,20 +400,26 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.1.0",
       "targets": [
         {
           "exemplar": true,
-          "expr": "count(hass_sensor_power_w)",
-          "instant": true,
+          "expr": "sum(hass_sensor_power_w)",
+          "instant": false,
           "interval": "",
           "legendFormat": "",
           "refId": "A"
+        },
+        {
+          "expr": "",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Total Devices",
+      "title": "Current Power",
       "type": "stat"
     },
     {
@@ -576,8 +506,8 @@
       },
       "gridPos": {
         "h": 6,
-        "w": 12,
-        "x": 12,
+        "w": 15,
+        "x": 9,
         "y": 4
       },
       "id": 53,
@@ -684,7 +614,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.1.0",
       "targets": [
         {
           "exemplar": true,
@@ -760,7 +690,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.1.0",
       "targets": [
         {
           "exemplar": true,
@@ -773,6 +703,83 @@
       "timeFrom": "now/M",
       "timeShift": null,
       "title": "Current Month Power Cost",
+      "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 6,
+        "y": 6
+      },
+      "id": 6,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.1.0",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "count(hass_sensor_power_w)",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Total Devices",
       "type": "stat"
     },
     {
@@ -818,7 +825,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.1.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -929,7 +936,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.1.0",
       "targets": [
         {
           "exemplar": true,
@@ -989,7 +996,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.1.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1072,7 +1079,7 @@
       "friendly_nameColors": {},
       "gridPos": {
         "h": 10,
-        "w": 7,
+        "w": 9,
         "x": 0,
         "y": 33
       },
@@ -1094,7 +1101,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.1.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1178,7 +1185,7 @@
       "gridPos": {
         "h": 10,
         "w": 15,
-        "x": 7,
+        "x": 9,
         "y": 33
       },
       "hiddenSeries": false,
@@ -1202,7 +1209,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.0.3",
+      "pluginVersion": "8.1.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
