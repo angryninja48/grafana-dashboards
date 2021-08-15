@@ -90,7 +90,8 @@
           "calcs": [
             "mean",
             "max",
-            "min"
+            "min",
+            "lastNotNull"
           ],
           "displayMode": "table",
           "placement": "right"
@@ -266,6 +267,6 @@
   },
   "timezone": "",
   "title": "House Temperature and Humidity",
-  "uid": "3_Ua-6Gnz",
-  "version": 7
+  "uid": "jfhkbIn7z",
+  "version": 2
 }
