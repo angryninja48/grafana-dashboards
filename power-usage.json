@@ -23,7 +23,7 @@
   "editable": true,
   "gnetId": 12139,
   "graphTooltip": 0,
-  "id": 5,
+  "id": 11,
   "links": [],
   "panels": [
     {
@@ -85,7 +85,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(hass_sensor_unit_kwh[$__range]))",
+          "expr": "sum(increase(hass_sensor_energy_kwh[$__range]))",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -155,7 +155,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(hass_sensor_unit_kwh[$__range]))",
+          "expr": "sum(increase(hass_sensor_energy_kwh[$__range]))",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -540,7 +540,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "topk(5,sum by (friendly_name) (increase(hass_sensor_unit_kwh[7d] )) )",
+          "expr": "topk(5,sum by (friendly_name) (increase(hass_sensor_energy_kwh[7d] )) )",
           "instant": true,
           "interval": "",
           "legendFormat": "{{friendly_name}}",
@@ -618,7 +618,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(hass_sensor_unit_kwh[$__range])) * 0.253 + 0.781000",
+          "expr": "sum(increase(hass_sensor_energy_kwh[$__range])) * 0.253 + 0.781000",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -694,7 +694,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(increase(hass_sensor_unit_kwh[$__range])) * 0.253 + 0.781000",
+          "expr": "sum(increase(hass_sensor_energy_kwh[$__range])) * 0.253 + 0.781000",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -940,7 +940,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "hass_sensor_unit_kwh",
+          "expr": "hass_sensor_energy_kwh{friendly_name!~\"Shelly.+\"}",
           "interval": "",
           "legendFormat": "{{ friendly_name }} ",
           "refId": "A"
@@ -1111,7 +1111,8 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(hass_sensor_current_a)",
+          "exemplar": true,
+          "expr": "sum(hass_sensor_current_ma)",
           "interval": "",
           "legendFormat": "Total",
           "refId": "B"
@@ -1144,7 +1145,7 @@
       "yaxes": [
         {
           "$$hashKey": "object:2630",
-          "format": "amp",
+          "format": "mamp",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -1220,7 +1221,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "hass_sensor_power_w{friendly_name=~\"office desk power|washing machine power|tv unit power\"}",
+          "expr": "hass_sensor_power_w{friendly_name=~\"Office.+|Washing.+|Fridge.+|Server.+|Dish.+\"}",
           "instant": false,
           "interval": "",
           "legendFormat": "{{friendly_name}}",
@@ -1283,7 +1284,7 @@
     "list": []
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {
