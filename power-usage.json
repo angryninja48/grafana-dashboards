@@ -1221,7 +1221,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "hass_sensor_power_w{friendly_name=~\"Office.+|Washing.+|Fridge.+|Server.+|Dish.+\"}",
+          "expr": "hass_sensor_power_w{friendly_name=~\"office.+|washing.+|fridge.+|server.+|dish.+\"}",
           "instant": false,
           "interval": "",
           "legendFormat": "{{friendly_name}}",

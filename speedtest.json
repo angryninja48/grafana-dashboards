@@ -66,7 +66,7 @@
         "targets": [
           {
             "exemplar": true,
-            "expr": "avg(speedtest_download_speed_Bps{user_isp=\"TPG Internet\"})",
+            "expr": "avg(speedtest_download_speed_Bps)",
             "format": "time_series",
             "instant": false,
             "interval": "",
@@ -77,7 +77,7 @@
           },
           {
             "exemplar": true,
-            "expr": "avg(speedtest_upload_speed_Bps{user_isp=\"TPG Internet\"})",
+            "expr": "avg(speedtest_upload_speed_Bps)",
             "hide": false,
             "interval": "",
             "legendFormat": "Upload",
