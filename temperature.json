@@ -19,13 +19,12 @@
     ]
   },
   "editable": true,
-  "gnetId": null,
+  "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 11,
   "links": [],
+  "liveNow": false,
   "panels": [
     {
-      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -103,6 +102,10 @@
       "pluginVersion": "8.0.5",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "exemplar": true,
           "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.living_room_sensor_temperature\"}",
           "interval": "",
@@ -110,6 +113,10 @@
           "refId": "A"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "exemplar": true,
           "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.bedroom_sensor_temperature\"}",
           "hide": false,
@@ -118,6 +125,10 @@
           "refId": "B"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "exemplar": true,
           "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.nursery_sensor_temperature\"}",
           "format": "time_series",
@@ -127,6 +138,10 @@
           "refId": "C"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "exemplar": true,
           "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.attic_sensor_temperature\"}",
           "format": "time_series",
@@ -134,15 +149,24 @@
           "interval": "",
           "legendFormat": "Attic",
           "refId": "D"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.outdoor_sensor_temperature\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Outside",
+          "refId": "E"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Inside Temperatures",
       "type": "timeseries"
     },
     {
-      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -185,6 +209,7 @@
       },
       "id": 6,
       "options": {
+        "orientation": "auto",
         "reduceOptions": {
           "calcs": [
             "mean"
@@ -196,9 +221,13 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.1.0",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "exemplar": true,
           "expr": "hass_sensor_humidity_percent{entity=~\"sensor.living_room_sensor_humidity\"}",
           "interval": "",
@@ -206,6 +235,10 @@
           "refId": "A"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "exemplar": true,
           "expr": "hass_sensor_humidity_percent{entity=~\"sensor.bedroom_sensor_humidity\"}",
           "hide": false,
@@ -214,6 +247,10 @@
           "refId": "B"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "exemplar": true,
           "expr": "hass_sensor_humidity_percent{entity=~\"sensor.nursery_sensor_humidity\"}",
           "format": "time_series",
@@ -223,6 +260,10 @@
           "refId": "C"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
           "exemplar": true,
           "expr": "hass_sensor_humidity_percent{entity=~\"sensor.attic_sensor_humidity\"}",
           "format": "time_series",
@@ -230,16 +271,26 @@
           "interval": "",
           "legendFormat": "Attic",
           "refId": "D"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "hass_sensor_humidity_percent{entity=~\"sensor.outdoor_sensor_humidity\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Outside",
+          "refId": "E"
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Inside Humidity",
       "type": "gauge"
     }
   ],
-  "refresh": "5m",
-  "schemaVersion": 30,
+  "refresh": "",
+  "schemaVersion": 34,
   "style": "dark",
   "tags": [
     "temperature",
@@ -268,5 +319,6 @@
   "timezone": "",
   "title": "House Temperature and Humidity",
   "uid": "jfhkbIn7z",
-  "version": 2
+  "version": 1,
+  "weekStart": ""
 }
