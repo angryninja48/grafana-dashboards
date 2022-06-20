@@ -236,7 +236,7 @@
       "pluginVersion": "8.1.0",
       "targets": [
         {
-          "expr": "sum(hass_sensor_power_w)",
+          "expr": "sum(hass_sensor_unit_w)",
           "instant": false,
           "interval": "",
           "legendFormat": "Max Power",
@@ -322,7 +322,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "(topk(5,(hass_sensor_power_w > 5)))",
+          "expr": "(topk(5,(hass_sensor_unit_w > 5)))",
           "instant": true,
           "interval": "",
           "legendFormat": "{{ friendly_name }}",
@@ -404,7 +404,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(hass_sensor_power_w)",
+          "expr": "sum(hass_sensor_unit_w)",
           "instant": false,
           "interval": "",
           "legendFormat": "",
@@ -770,7 +770,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "count(hass_sensor_power_w)",
+          "expr": "count(hass_sensor_unit_w)",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -836,7 +836,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum_over_time(hass_sensor_power_w[1h]) * 24 / 1000 ",
+          "expr": "sum_over_time(hass_sensor_unit_w[1h]) * 24 / 1000 ",
           "hide": false,
           "interval": "",
           "legendFormat": "{{friendly_name}}",
@@ -1006,14 +1006,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(hass_sensor_power_w)",
+          "expr": "sum(hass_sensor_unit_w)",
           "instant": false,
           "interval": "",
           "legendFormat": "Total",
           "refId": "A"
         },
         {
-          "expr": "hass_sensor_power_w",
+          "expr": "hass_sensor_unit_w",
           "interval": "",
           "legendFormat": "{{friendly_name}}",
           "refId": "B"
@@ -1221,7 +1221,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "hass_sensor_power_w{friendly_name=~\"office.+|washing.+|fridge.+|server.+|dish.+\"}",
+          "expr": "hass_sensor_unit_w{friendly_name=~\"office.+|washing.+|fridge.+|server.+|dish.+\"}",
           "instant": false,
           "interval": "",
           "legendFormat": "{{friendly_name}}",
