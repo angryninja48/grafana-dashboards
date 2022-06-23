@@ -107,9 +107,9 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.living_room_sensor_temperature\"}",
+          "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.zaras_room_sensor_temperature\"}",
           "interval": "",
-          "legendFormat": "Living Room",
+          "legendFormat": "Zara's Room",
           "refId": "A"
         },
         {
