@@ -3,7 +3,10 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -21,10 +24,16 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
+  "id": 12,
   "links": [],
   "liveNow": false,
   "panels": [
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -43,6 +52,9 @@
               "viz": false
             },
             "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
@@ -88,15 +100,14 @@
         "legend": {
           "calcs": [
             "mean",
-            "max",
-            "min",
             "lastNotNull"
           ],
-          "displayMode": "table",
+          "displayMode": "list",
           "placement": "right"
         },
         "tooltip": {
-          "mode": "single"
+          "mode": "single",
+          "sort": "none"
         }
       },
       "pluginVersion": "8.0.5",
@@ -106,67 +117,23 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.zaras_room_sensor_temperature\"}",
+          "expr": "hass_sensor_temperature_celsius{friendly_name=~\"Upstairs Living Room.+|Master.+|Zaras.+|Living.+|Outdoor.+|Kitchen.+|Office.+|Bathroom.+\"}",
           "interval": "",
-          "legendFormat": "Zara's Room",
+          "legendFormat": "{{friendly_name}}",
+          "range": true,
           "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "exemplar": true,
-          "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.bedroom_sensor_temperature\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Master Bedroom",
-          "refId": "B"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "exemplar": true,
-          "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.nursery_sensor_temperature\"}",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Nursery",
-          "refId": "C"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "exemplar": true,
-          "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.attic_sensor_temperature\"}",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Attic",
-          "refId": "D"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "exemplar": true,
-          "expr": "hass_sensor_temperature_celsius{entity=~\"sensor.outdoor_sensor_temperature\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Outside",
-          "refId": "E"
         }
       ],
-      "title": "Inside Temperatures",
+      "title": "Temperatures",
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -221,7 +188,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.3.4",
+      "pluginVersion": "9.0.1",
       "targets": [
         {
           "datasource": {
@@ -229,7 +196,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "hass_sensor_humidity_percent{entity=~\"sensor.living_room_sensor_humidity\"}",
+          "expr": "hass_sensor_humidity_percent{friendly_name=~\"Upstairs Living Room.+|Master.+|Zaras.+|Living.+|Outdoor.+|Kitchen.+|Office.+|Bathroom.+\"}",
           "interval": "",
           "legendFormat": "Living Room",
           "refId": "A"
@@ -285,12 +252,12 @@
           "refId": "E"
         }
       ],
-      "title": "Inside Humidity",
+      "title": "Humidity",
       "type": "gauge"
     }
   ],
   "refresh": "",
-  "schemaVersion": 34,
+  "schemaVersion": 36,
   "style": "dark",
   "tags": [
     "temperature",
@@ -300,7 +267,7 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
