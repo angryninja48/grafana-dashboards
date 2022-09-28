@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 33,
+  "id": 12,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -78,7 +78,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.1",
+      "pluginVersion": "9.1.6",
       "targets": [
         {
           "datasource": {
@@ -142,7 +142,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.0.1",
+      "pluginVersion": "9.1.6",
       "targets": [
         {
           "datasource": {
@@ -154,6 +154,68 @@
         }
       ],
       "title": "Todays Costs",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "watt"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 6,
+        "y": 0
+      },
+      "id": 14,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "max_over_time(hass_sensor_power_w{entity=\"sensor.solar_power_corrected\"}[1d])",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Max Power Produced",
       "type": "stat"
     },
     {
@@ -206,7 +268,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "9.0.1",
+      "pluginVersion": "9.1.6",
       "targets": [
         {
           "datasource": {
@@ -284,6 +346,8 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -343,7 +407,8 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": true
         },
         "tooltip": {
           "mode": "single",
@@ -371,6 +436,7 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -416,7 +482,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "9.0.1",
+      "pluginVersion": "9.1.6",
       "targets": [
         {
           "datasource": {
@@ -460,7 +526,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum(hass_sensor_energy_kwh{friendly_name=~\"Daily Energy Import.+\"})",
+          "expr": "sum(hass_sensor_energy_kwh{friendly_name=~\"Monthly Energy Import.+\"})",
           "hide": false,
           "legendFormat": "Monthly Energy Imported",
           "range": true,
@@ -472,7 +538,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum(hass_sensor_energy_kwh{friendly_name=~\"Daily Energy Export.+\"})",
+          "expr": "sum(hass_sensor_energy_kwh{friendly_name=~\"Monthly Energy Export.+\"})",
           "hide": false,
           "interval": "",
           "legendFormat": "Monthly Energy Exported",
@@ -495,6 +561,8 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "axisSoftMin": 0,
@@ -543,7 +611,8 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": true
         },
         "orientation": "auto",
         "showValue": "never",
@@ -596,6 +665,8 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "axisSoftMin": 0,
@@ -644,7 +715,8 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": true
         },
         "orientation": "auto",
         "showValue": "never",
@@ -686,7 +758,7 @@
       "type": "barchart"
     }
   ],
-  "schemaVersion": 36,
+  "schemaVersion": 37,
   "style": "dark",
   "tags": [],
   "templating": {
