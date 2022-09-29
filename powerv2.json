@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 12,
+  "id": 9,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -183,7 +183,7 @@
       "gridPos": {
         "h": 4,
         "w": 3,
-        "x": 6,
+        "x": 14,
         "y": 0
       },
       "id": 14,
@@ -217,122 +217,6 @@
       ],
       "title": "Max Power Produced",
       "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "kwatth"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 10,
-        "x": 14,
-        "y": 0
-      },
-      "id": 2,
-      "options": {
-        "displayMode": "gradient",
-        "minVizHeight": 10,
-        "minVizWidth": 0,
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showUnfilled": true,
-        "text": {}
-      },
-      "pluginVersion": "9.1.6",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "hass_sensor_energy_kwh{friendly_name=\"Daily Consumption\"}",
-          "interval": "",
-          "legendFormat": "{{friendly_name}}",
-          "range": true,
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "hass_sensor_energy_kwh{friendly_name=\"Daily Solar Energy\"}",
-          "hide": false,
-          "legendFormat": "{{friendly_name}}",
-          "range": true,
-          "refId": "B"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "sum(hass_sensor_energy_kwh{friendly_name=~\"Daily Solar Consumed.+\"})",
-          "hide": false,
-          "legendFormat": "Daily Solar Consumed",
-          "range": true,
-          "refId": "C"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "sum(hass_sensor_energy_kwh{friendly_name=~\"Daily Energy Import.+\"})",
-          "hide": false,
-          "legendFormat": "Daily Energy Imported",
-          "range": true,
-          "refId": "D"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "sum(hass_sensor_energy_kwh{friendly_name=~\"Daily Energy Export.+\"})",
-          "hide": false,
-          "legendFormat": "Daily Energy Exported",
-          "range": true,
-          "refId": "E"
-        }
-      ],
-      "title": "Today",
-      "type": "bargauge"
     },
     {
       "datasource": {
@@ -436,7 +320,6 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
-      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -464,11 +347,124 @@
         "h": 6,
         "w": 10,
         "x": 14,
-        "y": 6
+        "y": 4
+      },
+      "id": 2,
+      "options": {
+        "displayMode": "lcd",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "text": {}
+      },
+      "pluginVersion": "9.1.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "hass_sensor_energy_kwh{friendly_name=\"Daily Consumption\"}",
+          "interval": "",
+          "legendFormat": "{{friendly_name}}",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "hass_sensor_energy_kwh{friendly_name=\"Daily Solar Energy\"}",
+          "hide": false,
+          "legendFormat": "{{friendly_name}}",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "sum(hass_sensor_energy_kwh{friendly_name=~\"Daily Solar Consumed.+\"})",
+          "hide": false,
+          "legendFormat": "Daily Solar Consumed",
+          "range": true,
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "sum(hass_sensor_energy_kwh{friendly_name=~\"Daily Energy Import.+\"})",
+          "hide": false,
+          "legendFormat": "Daily Energy Imported",
+          "range": true,
+          "refId": "D"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "hass_sensor_energy_kwh{friendly_name=~\"Daily Energy Export.+\"}",
+          "hide": false,
+          "legendFormat": "Daily Energy Exported",
+          "range": true,
+          "refId": "E"
+        }
+      ],
+      "title": "Today",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          },
+          "unit": "kwatth"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 10,
+        "x": 14,
+        "y": 10
       },
       "id": 3,
       "options": {
-        "displayMode": "gradient",
+        "displayMode": "lcd",
         "minVizHeight": 10,
         "minVizWidth": 0,
         "orientation": "horizontal",
@@ -765,7 +761,7 @@
     "list": []
   },
   "time": {
-    "from": "now-24h",
+    "from": "now/d",
     "to": "now"
   },
   "timepicker": {},
